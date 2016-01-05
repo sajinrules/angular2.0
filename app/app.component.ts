@@ -1,37 +1,50 @@
 import {Component} from 'angular2/core';
-
-interface Hero {
-  id: number;
-  name: string;
-}
-
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Hero} from './hero';
+import {HeroDetailComponent} from './hero-detail.component';
+import {HeroService} from './hero.service';
+import {LoginPageComponent} from './login.component';
+import {RegisterPageComponent} from './register.component';
 @Component({
-    selector: 'my-app',
-    template: `
-		<h1>{{title}}</h1>
-		<ul>
-		<li *ngFor="#hero of heroes">
-			<span class="badge">{{hero.id}}</span> {{hero.name}}
-		</li>
-		</ul>
+	selector: 'my-app',
+	template: `
+		<nav>
+			<div class="nav-wrapper teal" >
+				<a style="margin: 0px 20px;" class="brand-logo">Angular 2.0 Beta</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a [routerLink]="['Login']">Login</a></li>
+					<li><a [routerLink]="['Register']">Register</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<router-outlet></router-outlet>
+      	</div>
 	`,
+	directives: [HeroDetailComponent,ROUTER_DIRECTIVES],
+	providers: [HeroService]
 	
 })
-export class AppComponent{
+@RouteConfig([
+	{path: '/',name: 'Login',component: LoginPageComponent,useAsDefault: true},
+	{path: '/register',   name: 'Register',component: RegisterPageComponent}
+])
+export class AppComponent implements OnInit {
 	public title = 'Tour of Heroes';
-	public heroes = HEROES;
+	public heroes: Hero[];
+	public selectedHero: Hero;
+
+	constructor(private _heroService: HeroService) { }
+
+	getHeroes() {
+		this._heroService.getHeroes().then(heroes => this.heroes = heroes);
+	}
+
+	ngOnInit() {
+		this.getHeroes();
+	}
+
+	onSelect(hero: Hero) { this.selectedHero = hero; }
 }
 
 
-var HEROES: Hero[] = [
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" },
-  { "id": 16, "name": "RubberMan" },
-  { "id": 17, "name": "Dynama" },
-  { "id": 18, "name": "Dr IQ" },
-  { "id": 19, "name": "Magma" },
-  { "id": 20, "name": "Tornado" }
-];
