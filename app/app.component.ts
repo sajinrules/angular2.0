@@ -26,7 +26,6 @@ import {RegisterPageComponent} from './register.component';
 	{path: '/register',   name: 'Register',component: RegisterPageComponent}
 ])
 export class AppComponent{
-	
 }
 
 
