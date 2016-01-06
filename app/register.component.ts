@@ -26,7 +26,7 @@ import { User }    from './user';
 					</div>
 				</div>
 				<button class="btn waves-effect waves-light" type="submit" name="action"  [disabled]="!loginForm.form.valid">Register
-					<i class="material-icons right">send</i>
+					<i class="material-icons right">send </i>
 				</button>
 			</form>
 		</div>
