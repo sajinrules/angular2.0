@@ -1,8 +1,5 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Hero} from './hero';
-import {HeroDetailComponent} from './hero-detail.component';
-import {HeroService} from './hero.service';
 import {LoginPageComponent} from './login.component';
 import {RegisterPageComponent} from './register.component';
 @Component({
@@ -21,30 +18,15 @@ import {RegisterPageComponent} from './register.component';
 			<router-outlet></router-outlet>
       	</div>
 	`,
-	directives: [HeroDetailComponent,ROUTER_DIRECTIVES],
-	providers: [HeroService]
+	directives: [ROUTER_DIRECTIVES]
 	
 })
 @RouteConfig([
 	{path: '/',name: 'Login',component: LoginPageComponent,useAsDefault: true},
 	{path: '/register',   name: 'Register',component: RegisterPageComponent}
 ])
-export class AppComponent implements OnInit {
-	public title = 'Tour of Heroes';
-	public heroes: Hero[];
-	public selectedHero: Hero;
-
-	constructor(private _heroService: HeroService) { }
-
-	getHeroes() {
-		this._heroService.getHeroes().then(heroes => this.heroes = heroes);
-	}
-
-	ngOnInit() {
-		this.getHeroes();
-	}
-
-	onSelect(hero: Hero) { this.selectedHero = hero; }
+export class AppComponent{
+	
 }
 
 
