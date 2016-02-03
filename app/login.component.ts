@@ -12,7 +12,7 @@ import {HTTP_PROVIDERS, Http} from 'angular2/http';
 					<div class="input-field col s12">
 						<input type="email" class="validate" [(ngModel)]="user.email" ngControl="email" #email="ngForm" required>
 						<label for="first_name">Email</label>
-						<div [hidden]="email.valid || !email.dirty" class="alert alert-danger">
+						<div [hidden]="email.valid || email.pristine" class="alert-danger">
 							Email is required 
 						</div>
 					</div>
@@ -21,7 +21,7 @@ import {HTTP_PROVIDERS, Http} from 'angular2/http';
 					<div class="input-field col s12">
 						<input type="password" class="validate" [(ngModel)]="user.password" ngControl="password" #password="ngForm" required>
 						<label for="password">Password</label>
-						<div [hidden]="password.valid || !password.dirty" class="alert alert-danger">
+						<div [hidden]="password.valid || password.pristine" class="alert-danger">
 							Password is required
 						</div>
 					</div>
