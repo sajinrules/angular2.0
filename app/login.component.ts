@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
+import { Router, RouterLink } from 'angular2/router';
 import {NgForm}    from 'angular2/common';
-import { User }    from './user';
+import {User}    from './user';
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
 @Component({
 	selector: 'login-page',
@@ -34,9 +35,12 @@ import {HTTP_PROVIDERS, Http} from 'angular2/http';
 	`
 })
 export class LoginPageComponent {
+	constructor(public router: Router) {
+	}
 	submitted = false;
 	user = new User();
 	onSubmit(){ 
+		console.log("this.router.parent:",this.router);
 		console.log("this.user:",this.user);
 		this.submitted = true; 
 	}
