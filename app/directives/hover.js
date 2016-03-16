@@ -21,13 +21,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             HoverComponent = (function () {
                 function HoverComponent(el) {
                     this.el = el;
-                    this._defaultColor = 'red';
+                    this.highlightColor = 'red';
                 }
                 HoverComponent.prototype.onMouseEnter = function () {
-                    this._highlight(this.highlightColor || this._defaultColor);
+                    this._highlight(this.highlightColor);
                 };
                 /*onMouseLeave() { this._highlight(null); }*/
                 HoverComponent.prototype._highlight = function (color) {
+                    console.log("color:", color);
                     this.el.nativeElement.style.backgroundColor = color;
                 };
                 HoverComponent = __decorate([

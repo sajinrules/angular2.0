@@ -19,7 +19,12 @@ export class LoginPageComponent {
 	onSubmit(){ 
 		console.log("this.router.parent:",this.router.parent);
 		console.log("this.user:",this.user);
-		this.submitted = true; 
-		this.router.parent.navigateByUrl('/home');
+		//let credential ={email="sajinrules@gmail.com",password="sajin"};
+		if(this.user.email==="sajinrules@gmail.com" && this.user.password==="sajin"){
+			localStorage.setItem("jwt","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9");
+			this.submitted = true; 
+			this.router.parent.navigateByUrl('/home');
+		}
+		
 	}
 }
