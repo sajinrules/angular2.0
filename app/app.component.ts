@@ -4,6 +4,8 @@ import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {LoginPageComponent} from './login.component';
 import {RegisterPageComponent} from './register.component';
 import {HomePageComponent} from './home.component';
+import {isLoggedIn} from './services/auth.service';
+
 @Component({
 	selector: 'my-app',
 })
@@ -12,11 +14,17 @@ import {HomePageComponent} from './home.component';
 	templateUrl: 'app/templates/navbar.html'
 })
 @RouteConfig([
-	{ path: '/',name: 'Login',component: LoginPageComponent,useAsDefault: true},
-	{ path: '/register',   name: 'Register',component: RegisterPageComponent},
-	{ path: '/home', name: 'Home', component: HomePageComponent }
+	{ path:'/', name:'Login',component:LoginPageComponent,useAsDefault: true},
+	{ path:'/register', name:'Register', component:RegisterPageComponent},
+	{ path:'/home', name: 'Home', component:HomePageComponent },
+	{aux:'/auxRoute', name: 'AuxPath', component: RegisterPageComponent}
 ])
 export class AppComponent{
+	isLoggedIn: bool = false;
+	constructor() {
+		this.isLoggedIn = isLoggedIn;
+		console.log("isLoggedIn:",isLoggedIn);
+	}
 }
 
 
