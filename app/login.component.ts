@@ -17,7 +17,8 @@ export class LoginPageComponent {
 	submitted = false;
 	user = new User();
 	onSubmit(){ 
-		console.log("this.router.parent:",this.router.parent);
+		console.log("this.router.parent:",this.router);
+		return;
 		console.log("this.user:",this.user);
 		//let credential ={email="sajinrules@gmail.com",password="sajin"};
 		if(this.user.email==="sajinrules@gmail.com" && this.user.password==="sajin"){

@@ -25,6 +25,7 @@ export class AppComponent{
 		this.isLoggedIn = isLoggedIn;
 		console.log("isLoggedIn:",isLoggedIn);
 	}
+	
 }
 
 
