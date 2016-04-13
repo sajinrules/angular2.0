@@ -1,13 +1,14 @@
 import {Component,View} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouterLink, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {LoginPageComponent} from './login.component';
 import {RegisterPageComponent} from './register.component';
 import {HomePageComponent} from './home.component';
-import {isLoggedIn} from './services/auth.service';
+import {authService} from './services/auth.service';
 
 @Component({
 	selector: 'my-app',
+	providers:[authService]
 })
 @View({
 	directives: [ROUTER_DIRECTIVES, LoggedInRouterOutlet],
@@ -21,11 +22,18 @@ import {isLoggedIn} from './services/auth.service';
 ])
 export class AppComponent{
 	isLoggedIn: bool = false;
-	constructor() {
-		this.isLoggedIn = isLoggedIn;
-		console.log("isLoggedIn:",isLoggedIn);
+	constructor(public router: Router,private _authService: authService) {
+		this._authService= _authService;
+		this.router=router;
 	}
 	
+	logout(){
+		console.log("logout");
+		this._authService.setStatus(false);
+		console.log("this.router:",this.router);
+		this.router.navigateByUrl('/');
+		
+	} 
 }
 
 
