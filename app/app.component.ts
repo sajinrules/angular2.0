@@ -17,8 +17,7 @@ import {authService} from './services/auth.service';
 @RouteConfig([
 	{ path:'/', name:'Login',component:LoginPageComponent,useAsDefault: true},
 	{ path:'/register', name:'Register', component:RegisterPageComponent},
-	{ path:'/home', name: 'Home', component:HomePageComponent },
-	{aux:'/auxRoute', name: 'AuxPath', component: RegisterPageComponent}
+	{ path:'/home/...', name: 'Home', component:HomePageComponent }
 ])
 export class AppComponent{
 	isLoggedIn: bool = false;
@@ -28,9 +27,9 @@ export class AppComponent{
 	}
 	
 	logout(){
-		console.log("logout");
+		/*console.log("logout");*/
 		this._authService.setStatus(false);
-		console.log("this.router:",this.router);
+		/*console.log("this.router:",this.router);*/
 		this.router.navigateByUrl('/');
 		
 	} 

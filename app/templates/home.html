@@ -1,3 +1,14 @@
-<div>
-	<h1 (click)="onClick($event)">Home</h1>
+<div class="row">
+	<div class="col s2" >
+		<div class="collection">
+			<a href="/home" class="collection-item">Todo</a>
+			<a [routerLink]="['./components']" class="collection-item">Components</a>
+			<a href="#!" class="collection-item">Server</a>
+			<a href="#!" class="collection-item">Log out</a>
+		</div>
+	</div>
+	<div class="col s10">
+		<router-outlet></router-outlet>
+	</div>
+	
 </div>
