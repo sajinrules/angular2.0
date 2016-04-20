@@ -1,6 +1,6 @@
 import {Component,View} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
-import {User}    from './user';
+import {User}    from '../model/user';
 @Component({
 	selector: 'register-page'
 })
