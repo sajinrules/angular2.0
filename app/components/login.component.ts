@@ -2,7 +2,7 @@ import {Component,View} from 'angular2/core';
 import { Router, RouterLink } from 'angular2/router';
 import {NgForm}    from 'angular2/common';
 import {User}    from './user';
-import {authService} from './services/auth.service';
+import {authService} from '../services/auth.service';
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
 
 @Component({

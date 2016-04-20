@@ -4,7 +4,7 @@ import {Router, RouterLink, RouteConfig, ROUTER_DIRECTIVES,Route} from 'angular2
 import {NgForm}    from 'angular2/common';
 import {User}    from './user';
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
-import {HoverComponent} from './directives/hover';
+import {HoverComponent} from '../directives/hover';
 import {todoPageComponent} from './todo.component';
 import {componentPageComponent} from './components.component';
 /*let template = require('templates/login.html');*/

@@ -4,7 +4,7 @@ import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {LoginPageComponent} from './login.component';
 import {RegisterPageComponent} from './register.component';
 import {HomePageComponent} from './home.component';
-import {authService} from './services/auth.service';
+import {authService} from '../services/auth.service';
 
 @Component({
 	selector: 'my-app',
