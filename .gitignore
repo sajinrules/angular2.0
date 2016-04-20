@@ -1,5 +1,5 @@
 node_modules
-app/*.js
+angular2.0/*.js
 app/components/*.js
 app/*.map
-app/components/*.map
+angular2.0/*.map
