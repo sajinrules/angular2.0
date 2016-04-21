@@ -1,5 +1,15 @@
 node_modules
-angular2.0/*.js
 app/components/*.js
+app/components/*.map
+
+app/directives/*.js
+app/directives/*.map
+
+app/model/*.js
+app/model/*.map
+
+app/services/*.js
+app/services/*.map
+
+app/*.js
 app/*.map
-angular2.0/*.map
