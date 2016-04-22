@@ -20,7 +20,7 @@ import {authService} from '../services/auth.service';
 	{ path:'/home/...', name: 'Home', component:HomePageComponent }
 ])
 export class AppComponent{
-	isLoggedIn: bool = false;
+	isLoggedIn: boolean = false;
 	constructor(public router: Router,private _authService: authService) {
 		this._authService= _authService;
 		this.router=router;

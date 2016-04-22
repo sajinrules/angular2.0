@@ -16,7 +16,7 @@ export class LoginPageComponent {
 	constructor(public router: Router,private _authService: authService) {
 	}
 	submitted = false;
-	user = new User();
+	user = new User('','');
 	onSubmit(){ 
 		if(this.user.email==="sajinrules@gmail.com" && this.user.password==="sajin"){
 			this.submitted = true; 

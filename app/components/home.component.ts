@@ -2,7 +2,7 @@ import {Component,Directive,View} from 'angular2/core';
 /*import { Router, RouterLink } from 'angular2/router';*/
 import {Router, RouterLink, RouteConfig, ROUTER_DIRECTIVES,Route} from 'angular2/router';
 import {NgForm}    from 'angular2/common';
-import {User}    from './user';
+import {User}    from '../model/user';
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {HoverComponent} from '../directives/hover';
 import {todoPageComponent} from './todo.component';
