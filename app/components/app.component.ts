@@ -15,7 +15,7 @@ import {authService} from '../services/auth.service';
 	templateUrl: 'app/templates/navbar.html'
 })
 @RouteConfig([
-	{ path:'https://ng-beginner.herokuapp.com/', name:'Login',component:LoginPageComponent,useAsDefault: true},
+	{ path:'ng-beginner.herokuapp.com/', name:'Login',component:LoginPageComponent,useAsDefault: true},
 	{ path:'/register', name:'Register', component:RegisterPageComponent},
 	{ path:'/home/...', name: 'Home', component:HomePageComponent }
 ])
